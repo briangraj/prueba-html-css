@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --primary-color:  #007af3;
+}
+
+body {
+    background: #f2f2f2;
+    margin: 0; // afecta al exterior del elemento
+    font-family: 'Poppins';
+}
+
+.navbar {
+    background: white;
+    padding: 1em; // afecta al interior del elemento
+
+    .logo {
+        text-decoration: none;
+        font-weight: bold;
+        color: black;
+        font-size: 1.2em; // unidad relativa de tamaño
+
+        span {
+            color: var(--primary-color);
+        }
+    }
+
+    nav {
+        display: none;
+    }
+
+    .container {
+        display: flex; // sirve para estructurar layouts
+        place-content: space-between;
+    }
+
+    .mobile-menu {
+        cursor: pointer;
+        width: 1.9em;
+        height: width;
+    }
+}
+
+a {
+    color: #444444;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    // padding: 5em; // afecta todo
+    padding: 5em 2em; // arriba y abajo, izq y der
+    // padding: 5em 8em 10em 20px; // arriba derecha abajo izquierda, va en sentido horario
+}
+
+.hero {
+    text-align: center;
+}
+
+.left-col {
+    .subhead {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: gray;
+        letter-spacing: .3em;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        line-height: 1.3em;
+        margin-top: .2em;
+    }
+
+    .primary-cta {
+        background: var(--primary-color);
+        color: white;
+        text-decoration: none;
+        padding: .6em 1.3em;
+        font-size: 1.4em;
+        border-radius: 5em;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .watch-video-cta {
+        display: block;
+        margin-top: 1em;
+
+        img {
+            margin-right: .5em;
+        }
+    }
+}
+
+.hero-img {
+    width: 70%;
+    margin-top: 3em;
+}
+
+section.features-section {
+    background: #20272e;
+    color: white;
+}
+
+ul.features-list {
+    margin: 0;
+    padding-left: .1em;
+    // display: grid;
+
+    li {
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        margin-left: 2em;
+        position: relative; // los hijos se van a posicionar relativo a este
+
+        &:before { // el & es algo propio de sass, se transpila a li:before { ...
+            content: '';
+            left: -2em;
+            position: absolute; // usar absolute es una forma de posicionar un elemento adentro del documento
+            width: 20px;
+            height: 20px;
+            background-image: url('../images/bullet.svg');
+            background-size: contain;
+            margin-left: .5em;
+        }
+    }
+}
+
+.features-section img {
+    display: none;
+}
+
+.testimonials-section {
+    background: var(--primary-color);
+    color: white;
+
+    li {
+        background: #006bd6;
+        text-align: center;
+        padding: 2em 1em;
+        width: 80%;
+        margin: 0 auto 5em auto; // tener auto en left y right permite centrar el elemento
+        border-radius: 1em;
+
+        img {
+            width: 5em;
+            height: 5em;
+            border: 5px solid #006bd6;
+            border-radius: 50%; // hace circular la foto
+            margin-top: -4.5em;
+        }
+    }
+}
+
+h2 {
+    font-size: 2em;
+}
+
+label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: .5em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: .8em;
+    margin-bottom: 1em;
+    border-radius: .3em;
+    border: 1px solid gray; // sin esta linea los bordes quedan raros
+    box-sizing: border-box; // cuando usas margin y width: 100% puede que el elemento se pase del tamaño deseado y termine generando una scrollbar horizontal
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: bold;
+    font-size: 1.3em;
+    border: none;
+    margin-bottom: 5em;
+    border-radius: 5em;
+    display: inline-block;
+    padding: .8em 2em;
+    width: unset;
+    cursor: pointer;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+}
